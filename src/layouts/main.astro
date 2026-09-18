@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Crust</title>
+		<script is:inline>
+			const theme = localStorage.getItem("theme") ?? "system";
+			const isDark =
+				theme === "dark" ||
+				(theme === "system" &&
+					window.matchMedia("(prefers-color-scheme: dark)").matches);
+			document.documentElement.classList.toggle("dark", isDark);
+		</script>
+	</head>
+	<body>
+		<div class="w-2/3 mt-5 mx-auto">
+			<slot />
+		</div>
+	</body>
+</html>

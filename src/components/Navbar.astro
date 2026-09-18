@@ -1,0 +1,15 @@
+---
+import "../styles/global.css"
+import { Button } from "./ui/button";
+import { ModeToggle } from "./ModeToggle";
+---
+<nav class="flex justify-between h-10 align-center ">
+    <p class="text-3xl">Crust</p>
+    <div class="flex gap-x-4">
+        <Button variant="outline">Logs</Button>
+        <Button variant="default">Timeline</Button>
+        <Button variant="outline">About</Button>
+
+    </div>
+    <ModeToggle client:load/>
+</nav>
